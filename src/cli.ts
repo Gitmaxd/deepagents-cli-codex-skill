@@ -153,7 +153,7 @@ const init = defineCommand({
 const main = defineCommand({
   meta: {
     name: 'deepagents-cli-codex-skill',
-    version: '0.1.0',
+    version: '0.1.1',
     description: 'Deep Agents CLI skill for OpenAI Codex',
   },
   subCommands: {

@@ -107,7 +107,7 @@ Each reference file is a structured knowledge document scoped to a specific area
 **File:** `references/cli-reference.md`
 **Source:** [CLI Overview](https://docs.langchain.com/oss/python/deepagents/cli/overview)
 
-Complete reference for every command, flag, slash command, and keyboard shortcut in the Deep Agents CLI.
+Complete reference for every command, flag, slash command, and keyboard shortcut in the Deep Agents CLI. Covers top-level commands (`deepagents list`, `deepagents reset`, `deepagents skills`), all launch flags (`-M`, `-a`, `-n`, `-r`, `-q`, `--auto-approve`, `--shell-allow-list`), all slash commands (`/model`, `/remember`, `/threads`, `/trace`, `/clear`, `/tokens`), keyboard shortcuts for the interactive REPL, the built-in tool inventory with approval requirements, and non-interactive mode behavior in detail.
 
 ---
 
@@ -116,7 +116,7 @@ Complete reference for every command, flag, slash command, and keyboard shortcut
 **File:** `references/providers.md`
 **Source:** [Model Providers](https://docs.langchain.com/oss/python/deepagents/cli/providers)
 
-Configuration reference for all 20+ supported LLM providers.
+Configuration reference for all 20+ supported LLM providers including OpenAI, Anthropic, Google Gemini, AWS Bedrock, Azure OpenAI, Ollama, Groq, DeepSeek, Mistral AI, Perplexity, xAI, OpenRouter, and more. Covers API key environment variables per provider, the `~/.deepagents/config.toml` schema in full, model resolution order (`-M` flag → config default → recent → API key detection), and provider-specific parameters for local models such as Ollama.
 
 ---
 
@@ -125,7 +125,7 @@ Configuration reference for all 20+ supported LLM providers.
 **File:** `references/skills-system.md`
 **Source:** [Skills](https://docs.langchain.com/oss/python/deepagents/skills)
 
-Detailed guide to the Deep Agents skills system.
+Detailed guide to the Deep Agents skills system: the `SKILL.md` format and frontmatter fields, directory conventions for user-level (`~/.deepagents/<agent>/skills/`) and project-level (`.deepagents/skills/`) skills, the progressive disclosure loading model, override behavior when user and project skills share a name, and the full CLI for creating, listing, inspecting, and deleting skills.
 
 ---
 
@@ -134,7 +134,7 @@ Detailed guide to the Deep Agents skills system.
 **File:** `references/memory-and-persistence.md`
 **Source:** [Long-term Memory](https://docs.langchain.com/oss/python/deepagents/long-term-memory)
 
-Covers both layers of the Deep Agents memory system.
+Covers both layers of the Deep Agents memory system: the file-based layer (`AGENTS.md` and `memories/`) that persists across sessions per agent, and the SDK layer (`InMemoryStore`, `AsyncPostgresStore`) for programmatic long-term memory backends. Includes the agent directory layout, the `/remember` command and its optional context argument, `deepagents reset` behavior, and the distinction between agent-scoped and project-scoped `AGENTS.md` files.
 
 ---
 
@@ -143,7 +143,7 @@ Covers both layers of the Deep Agents memory system.
 **File:** `references/sandboxes.md`
 **Source:** [Sandboxes](https://docs.langchain.com/oss/python/deepagents/sandboxes)
 
-Setup and configuration guide for all four supported sandbox providers.
+Setup and configuration guide for all four supported sandbox providers: Modal (GPU and ML workloads), Runloop (disposable devboxes), Daytona (fast cold starts for TypeScript and Python development), and LangSmith (cloud-hosted execution). Covers `--sandbox`, `--sandbox-setup`, and `--sandbox-id` flags, provider-specific environment variables, setup script patterns, sandbox reuse across sessions, and the security isolation properties of each provider.
 
 ---
 
@@ -152,7 +152,7 @@ Setup and configuration guide for all four supported sandbox providers.
 **File:** `references/sdk-customization.md`
 **Sources:** [Customization](https://docs.langchain.com/oss/python/deepagents/customization), [Subagents](https://docs.langchain.com/oss/python/deepagents/subagents), [Backends](https://docs.langchain.com/oss/python/deepagents/backends), [Human-in-the-Loop](https://docs.langchain.com/oss/python/deepagents/human-in-the-loop), [Middleware](https://docs.langchain.com/oss/python/deepagents/middleware)
 
-Programmatic usage of the Deep Agents SDK via `create_deep_agent()`.
+Programmatic usage of the Deep Agents SDK via `create_deep_agent()`. Covers the full function signature, model configuration, custom tool registration, system prompt customization, the middleware stack (request and response hooks for logging, rate limiting, and guardrails), subagent patterns (spawning agents as tools within a parent agent), backend types (local, sandbox, ACP), Human-in-the-Loop approval gates with interrupt and resume patterns, context management, and structured output configuration.
 
 ---
 
@@ -161,7 +161,7 @@ Programmatic usage of the Deep Agents SDK via `create_deep_agent()`.
 **File:** `references/streaming.md`
 **Sources:** [Streaming Overview](https://docs.langchain.com/oss/python/deepagents/streaming/overview), [Streaming Frontend](https://docs.langchain.com/oss/python/deepagents/streaming/frontend)
 
-Streaming output reference for both CLI and SDK usage.
+Streaming output reference for both CLI and SDK usage. Covers the three streaming modes (`text`, `events`, `full`), subgraph streaming for multi-agent pipelines where each agent emits its own stream, Server-Sent Events integration for web frontends, WebSocket alternatives, and the frontend streaming protocol including event types and client-side consumption patterns.
 
 ---
 
@@ -170,7 +170,7 @@ Streaming output reference for both CLI and SDK usage.
 **File:** `references/acp.md`
 **Source:** [Agent Client Protocol](https://docs.langchain.com/oss/python/deepagents/acp)
 
-Reference for the Agent Client Protocol (ACP).
+Reference for the Agent Client Protocol (ACP) — the open standard that allows editors and external clients to communicate with a running Deep Agents instance over a local socket. Covers the ACP server (`deepagents serve`), the request and response protocol, capability negotiation, and integration guides for Zed, VS Code, JetBrains IDEs, and Neovim.
 
 ---
 
@@ -178,7 +178,7 @@ Reference for the Agent Client Protocol (ACP).
 
 **File:** `references/workflows.md`
 
-Practical reference for automation and scripted usage.
+Practical reference for automation and scripted usage. Covers non-interactive mode recipes for common tasks, CI/CD integration patterns with environment configuration, piped input workflows using stdin, multi-step subagent orchestration, shell access configuration with `--shell-allow-list`, output formatting with `-q` and `--no-stream` for downstream piping, and a troubleshooting index for the most common runtime errors.
 
 ---
 
