@@ -7,7 +7,6 @@ description: |
   (3) Manage agent memory, skills, or AGENTS.md context files,
   (4) Configure LLM providers, models, or sandbox execution environments,
   (5) Build scripted workflows or subagent patterns with deepagents.
-compatibility: Designed for OpenAI Codex
 ---
 
 # Deep Agents CLI
